@@ -1,7 +1,5 @@
 <html>
 	<p>
-		Save the <strong>penguins </strong> !!! <br />
-		<img src="penguin.png">
 		<style type="text/css">
         		#canvas {
            		border: 2px solid #666;
@@ -12,24 +10,9 @@
 	    <canvas id="canvas" width="900" height="600"></canvas>
 	    <script>
 
-	        function renderCircle(context, x, y, radius, fill) {
-	            var strokeWidth = 0.1
-	            context.beginPath();
-	            context.arc(x, y, radius, 0, 2 * Math.PI, false);
-	            context.fillStyle = fill;
-	            context.fill();
-	            context.lineWidth = strokeWidth;
-	            context.strokeStyle = '#666';
-	            context.stroke();
-	        }
-
 	        function draw() {
-	        renderCircle(context, radius, canvas.height / 2, radius, 'yellow');
-	        renderCircle(context, canvas.width / 2, canvas.height / 2, radius, 'blue');
-	        renderCircle(context, canvas.width - radius , canvas.height / 2, radius, 'red');
-
+	        	<img src="penguin.png">
 	        }
-
 
 	        var canvas = document.getElementById('canvas');
 	        var context = canvas.getContext('2d')
