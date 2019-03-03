@@ -1,5 +1,7 @@
 <html>
 	<p>
+		screen.availWidth
+
 		<style type="text/css">
         		#canvas {
            		border: 2px solid #666;
@@ -7,7 +9,7 @@
    		 </style>
 	</p>
 	<body>
-	    <canvas id="canvas" width="screen.availWidth-20" height="screen.availWidth-20"></canvas>
+	    <canvas id="canvas" width="screen.availWidth-20" height="screen.availHeight-20"></canvas>
 	    <script>
 
 	        function draw() {
@@ -16,7 +18,6 @@
 
 	        var canvas = document.getElementById('canvas');
 	        var context = canvas.getContext('2d')
-	        var radius  = 50;
 
 
 	        setInterval(draw, 1000 / 60);
