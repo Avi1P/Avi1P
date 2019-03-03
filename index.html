@@ -13,9 +13,9 @@
 	    <script>
 
 	        function renderCircle(context, x, y, radius, fill) {
-	            var strokeWidth = 1
+	            var strokeWidth = 0.1
 	            context.beginPath();
-	            context.arc(x, y, radius - (strokeWidth), 0, 2 * Math.PI, false);
+	            context.arc(x, y, radius, 0, 2 * Math.PI, false);
 	            context.fillStyle = fill;
 	            context.fill();
 	            context.lineWidth = strokeWidth;
