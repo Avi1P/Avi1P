@@ -24,7 +24,9 @@
 	    	var context = canvas.getContext('2d');
 	       	context.canvas.width= window.innerWidth-20;
 		    context.canvas.height= 60;
-		    
+		    logo = new Image();
+		    logo.src = "logo.png"
+		    context.drawImage(logo, 0, 0);
 		</script>
 	</body>
 </html>
