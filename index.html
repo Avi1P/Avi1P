@@ -21,11 +21,13 @@
 		    function draw() {
 	        	var canvas = document.getElementById('canvas');
 	    		var context = canvas.getContext('2d');
+	    		var x = 0;
+	    		x = x+1;
 	    	   	context.canvas.width= window.innerWidth-20;
 		       	context.canvas.height= window.innerHeight-20;
 		       	penguin = new Image();
   				penguin.onload = function(){
-    				context.drawImage(penguin, 0, 0);
+    				context.drawImage(penguin, x, 0);
   				}
   				penguin.src = 'penguin.png';
 		    }
