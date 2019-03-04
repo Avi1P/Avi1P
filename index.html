@@ -1,27 +1,23 @@
-<html>
-	<p>
-		<style>
-        		#canvas {
-           		border: 2px solid #666;
-           		background-color: lightblue;
-        		}
-   		 </style>
-	</p>
-	<body>
-	    <canvas id="canvas"></canvas>
-	    <script>
+	<html>
+		<p>
+			<style>
+	        		#canvas {
+	           		border: 2px solid #666;
+	           		background-color: lightblue;
+	        		}
+	   		 </style>
+		</p>
+		<body>
+		    <canvas id="canvas"></canvas>
+		    <script>
 
-	        function draw() {
-	        }
-
-	        var canvas = document.getElementById('canvas');
-	        canvas.width =canvas.device-width;
-	        var context = canvas.getContext('2d')
-
-
-	        setInterval(draw, 1000 / 60);
-
-	    </script>
-	</body>
-	<img src="penguin.png">
-</html>
+		        function draw() {
+		        	var canvas = document.getElementById('canvas');
+		    		var context = canvas.getContext('2d')
+		         	context.canvas.width= window.innerWidth;
+		        }
+		        setInterval(draw, 1000 / 60);
+		    </script>
+		</body>
+		<img src="penguin.png">
+	</html>
