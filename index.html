@@ -1,28 +1,27 @@
-	<html>
-			<style type="text/css">
-				html {
-					overflow:hidden;
-				}
-			</style>
-		<p>
-			<style>
-	        		#canvas {
-	           		border: 2px solid #666;
-	           		background-color: lightblue;
-	   		 </style>
-		</p>
-		<body>
-		    <canvas id="canvas"></canvas>
-		    <script>
-
+<html>
+		<style type="text/css">
+			html {
+				overflow:auto;
+			}
+		</style>
+	<p>
+		<style>
+        		#canvas {
+           		border: 2px solid #666;
+           		background-color: lightblue;
+   		 </style>
+	</p>
+	<body>
+	    <canvas id="canvas"></canvas>
+	    <script>
 		        function draw() {
-		        	var canvas = document.getElementById('canvas');
-		    		var context = canvas.getContext('2d')
-		         	context.canvas.width= window.innerWidth-20;
+	        		var canvas = document.getElementById('canvas');
+	    			var context = canvas.getContext('2d')
+	    	     	context.canvas.width= window.innerWidth-20;
 		         	context.canvas.height= window.innerHeight-20;
 		        }
-		        setInterval(draw, 1000 / 60);
-		    </script>
-		</body>
-		<img src="penguin.png">
-	</html>
+	     setInterval(draw, 1000 / 60);
+		</script>
+	</body>
+	<img src="penguin.png">
+</html>
