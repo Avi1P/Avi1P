@@ -23,12 +23,12 @@
 	       	context.canvas.width= window.innerWidth-20;
 		    context.canvas.height= 2*(window.innerHeight-20);
 		    penguin = new Image();
-		    var scrollTop = 
-		       		(window.pageYOffset !== undefined) ? window.pageYOffset 
-		       		: (document.documentElement || document.body.parentNode || document.body).scrollTop;
   			penguin.src = 'penguin.png';
 
 		    function draw() {
+		    	var scrollTop = 
+		       		(window.pageYOffset !== undefined) ? window.pageYOffset 
+		       		: (document.documentElement || document.body.parentNode || document.body).scrollTop;
 	        	context.drawImage(penguin, scrollTop, scrollTop);
 		    }
 	    	setInterval(draw, 20);
