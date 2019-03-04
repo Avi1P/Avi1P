@@ -1,12 +1,12 @@
 <html>
 	<p>
 		<style>
-        		#canvas { 
+        	#canvas { 
 				border: 2px solid #666; 
 				background-color: lightblue;
 			}
 			html {
-    				overflow: scroll;
+    			overflow: scroll;
    				overflow-x: hidden;
 			}
 			::-webkit-scrollbar { 
@@ -18,13 +18,18 @@
 	<body>
 	    <canvas id="canvas"></canvas>
 	    <script>
-		        function draw() {
-	        		var canvas = document.getElementById('canvas');
-	    			var context = canvas.getContext('2d')
-	    	     	context.canvas.width= window.innerWidth-20;
-		         	context.canvas.height= window.innerHeight-20;
-		        }
-	     setInterval(draw, 1000 / 60);
+		    function draw() {
+	        	var canvas = document.getElementById('canvas');
+	    		var context = canvas.getContext('2d');
+	    	   	context.canvas.width= window.innerWidth-20;
+		       	context.canvas.height= window.innerHeight-20;
+		       	penguin = new Image();
+  				penguin.src = 'penguin.png';
+  				penguin.onload = function(){
+    				context.drawImage(penguin, 0, 0);
+  				}
+		    }
+	    	setInterval(draw, 1000 / 60);
 		</script>
 	</body>
 	<img src="penguin.png">
