@@ -18,21 +18,18 @@
 	<body>
 	    <canvas id="canvas"></canvas>
 	    <script>
-		    function draw() {
-	        	var canvas = document.getElementById('canvas');
-	    		var context = canvas.getContext('2d');
-	    	   	context.canvas.width= window.innerWidth-20;
-		       	context.canvas.height= 2*(window.innerHeight-20);
-		       	penguin = new Image();
-		       	
-		       	var scrollTop = 
+	    	var canvas = document.getElementById('canvas');
+	    	var context = canvas.getContext('2d');
+	       	context.canvas.width= window.innerWidth-20;
+		    context.canvas.height= 2*(window.innerHeight-20);
+		    penguin = new Image();
+		    var scrollTop = 
 		       		(window.pageYOffset !== undefined) ? window.pageYOffset 
 		       		: (document.documentElement || document.body.parentNode || document.body).scrollTop;
-  				
-  				penguin.onload = function(){
-    				context.drawImage(penguin, scrollTop, scrollTop);
-  				}
-  				penguin.src = 'penguin.png';
+  			penguin.src = 'penguin.png';
+
+		    function draw() {
+	        	context.drawImage(penguin, scrollTop, scrollTop);
 		    }
 	    	setInterval(draw, 20);
 		</script>
