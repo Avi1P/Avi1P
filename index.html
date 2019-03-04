@@ -24,13 +24,17 @@
 	    	   	context.canvas.width= window.innerWidth-20;
 		       	context.canvas.height= 2*(window.innerHeight-20);
 		       	penguin = new Image();
-		       	var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+		       	
+		       	var scrollTop = 
+		       		(window.pageYOffset !== undefined) ? window.pageYOffset 
+		       		: (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  				
   				penguin.onload = function(){
-    				context.drawImage(penguin, scrollTop, 0);
+    				context.drawImage(penguin, scrollTop, scrollTop);
   				}
   				penguin.src = 'penguin.png';
 		    }
-	    	setInterval(draw, 200);
+	    	setInterval(draw, 50);
 		</script>
 	</body>
 </html>
