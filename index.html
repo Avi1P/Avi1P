@@ -12,6 +12,7 @@
 			::-webkit-scrollbar { 
 				width: 0px; 
 				background: transparent;
+				border-radius: 25px;
 			}
    		</style>
 	</p>
@@ -24,11 +25,12 @@
 		    context.canvas.height= 2*(window.innerHeight-20);
 		    penguin = new Image();
   			penguin.src = 'penguin.png';
-
-		    function draw() {
-		    	var scrollTop = 
+  			var scrollTop = 
 		       		(window.pageYOffset !== undefined) ? window.pageYOffset 
 		       		: (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+		    function draw() {
+		    	
 	        	context.drawImage(penguin, scrollTop, scrollTop);
 
 		    }
