@@ -2,7 +2,7 @@
 	<p>
 		<style>
         	#canvas { 
-				border: 2px solid #666; 
+				border: 1px solid #666; 
 				background-color: white;
 				border-radius: 25px;
 			}
@@ -14,6 +14,13 @@
 				width: 0px; 
 				background: transparent;
 
+			}
+			@font-face {
+  				font-family: myFirstFont;
+  				src: url(sansation_light.woff);
+			}
+			div {
+ 				font-family: myFirstFont;
 			}
    		</style>
 	</p>
@@ -28,5 +35,6 @@
 		    logo.src = "logo.png"
 		    context.drawImage(logo, 0, 0);
 		</script>
+		<div>With CSS, websites can finally use fonts other than the pre selected "web-safe" fonts.</div>
 	</body>
 </html>
