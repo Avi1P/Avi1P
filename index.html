@@ -1,4 +1,4 @@
-<html>
+	<html>
 	<p>
 		<style>
         	#canvas { 
@@ -13,7 +13,10 @@
 			::-webkit-scrollbar { 
 				width: 0px; 
 				background: transparent;
-
+			}
+			@font-face {
+			font-family: "Qontra";
+			src: url("Qontra.otf") format("opentype"),
 			}
    		</style>
 	</p>
@@ -27,7 +30,7 @@
 		    logo = new Image();
 		    logo.src = "logo.png"
 		    context.drawImage(logo, 0, 0);
-		    context.font = "25px Lucida Sans Unicode";
+		    context.font = "25px Qontra";
 		    context.fillText("HOME     ABOUT US     SERVICES     TESTIMONIALS     CONTACT", 400, 35)
 		</script>
 	</body>
