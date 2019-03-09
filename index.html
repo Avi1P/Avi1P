@@ -14,23 +14,18 @@
 				width: 0px; 
 				background: transparent;
 			}
-			@font-face {
-				font-family: "Qontra";
-				src: url("webfontkit-20190309-141651/Harabara.eot");
-				src: 
-				url("webfontkit-20190309-141651/Qontra.woff") format("woff"),
-				url("webfontkit-20190309-141651/Qontra.otf") format("opentype"),
-				url("webfontkit-20190309-141651//Qontra.svg#filename") format("svg");
-			}
-			h1 {
-			font-family: 'Qontra', Arial, sans-serif;
-			font-weight:normal;
-			font-style:normal;
-}
    		</style>
 	</p>
 	<body>
 	    <canvas id="canvas"></canvas>
+	    <style>
+			@font-face {
+				font-family: Qontra; src: url('Qontra.otf');
+			}
+			h1 {
+				font-family: 'Qontra', sans-serif;
+			}
+   		</style>
 	    <script>
 	    	var canvas = document.getElementById('canvas');
 	    	var context = canvas.getContext('2d');
@@ -43,4 +38,4 @@
 		    context.fillText("HOME     ABOUT US     SERVICES     TESTIMONIALS     CONTACT", 400, 35)
 		</script>
 	</body>
-</html>
+</html>	
