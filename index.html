@@ -4,7 +4,7 @@
         	#canvas { 
 				border: 1px solid #666; 
 				background-color: white;
-				border-radius: 25px;
+				border-radius: 20px;
 			}
 			html {
     			overflow: scroll;
@@ -42,13 +42,13 @@
 		    context.font = "25px Qontra";
 		    //context.fillText("HOME     ABOUT US     SERVICES     TESTIMONIALS     CONTACT", 400, 35)
 		   	
-		   	context.fillRect(400, 30, 30, 30);
+		   	context.fillRect(400, 30, 10, 30);
 		   	canvas.addEventListener('click', function(event) {
 		   		if (
-        			event.x > 400 && 
-    			    event.x < 430 &&
-    			    event.y > 30 && 
-    			    event.y < 60
+        			event.x > 410 && 
+    			    event.x < 440 &&
+    			    event.y > 20 && 
+    			    event.y < 50
     		  	) {	
 		   			alert('Button was clicked!');
     			}
