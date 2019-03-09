@@ -1,7 +1,7 @@
 	<html>
 	<p>
 		<style>
-        	#canvas { 
+        	#menu { 
 				border: 1px solid #666; 
 				background-color: white;
 				border-radius: 25px;
@@ -17,7 +17,7 @@
    		</style>
 	</p>
 	<body>
-	    <canvas id="canvas"></canvas>
+	    <menu id="menu"></menu>
 	    <style>
 			@font-face {
 				font-family: Qontra; src: url('Qontra.otf');
@@ -27,15 +27,29 @@
 			}
    		</style>
 	    <script>
-	    	var canvas = document.getElementById('canvas');
-	    	var context = canvas.getContext('2d');
-	       	context.canvas.width= window.innerWidth-20;
-		    context.canvas.height= 50;
+	    	//Creates Menu
+	    	var menu = document.getElementById('menu');
+	    	var context = menu.getContext('2d');
+	       	context.menu.width= window.innerWidth-20;
+		    context.menu.height= 50;
 		    logo = new Image();
 		    logo.src = "logo.png"
 		    context.drawImage(logo, 0, 0);
 		    context.font = "25px Qontra";
 		    context.fillText("HOME     ABOUT US     SERVICES     TESTIMONIALS     CONTACT", 400, 35)
+		   	
+		   // 1. Create the button
+		   	var button = document.createElement("button");
+			button.innerHTML = "Do Something";
+
+			// 2. Append somewhere
+			var body = document.getElementsByTagName("body")[0];
+			body.appendChild(button);
+
+			// 3. Add event handler
+			button.addEventListener ("click", function() {
+	   		alert("did something");
+			});
 		</script>
 	</body>
 </html>	
