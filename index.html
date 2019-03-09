@@ -39,10 +39,11 @@
 		    context.drawImage(logo, 0, 0);
 
 
-		    context.font = "25px Qontra";
+		    context.font = "20px Qontra";
 		    //context.fillText("HOME     ABOUT US     SERVICES     TESTIMONIALS     CONTACT", 400, 35)
 		   	
-		   	context.fillRect(400, 10, 30, 30);
+		   	context.strokeRect(400, 10, 30, 30);
+		   	context.fillText("Home",400, 35);
 		   	canvas.addEventListener('click', function(event) {
 		   		if (
         			event.x > 410 && 
