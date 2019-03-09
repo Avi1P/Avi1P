@@ -45,12 +45,9 @@
 
 		   	context.strokeRect(400, 10, 60, 30);
 		   	context.fillText("Home",405, 35);
-		   	canvas.addEventListener('mosueover', function(event) {
+		   	canvas.addEventListener('click', function(event) {
 		   		if (event.x > 410 && event.x < 470 && event.y > 20 && event.y < 50) {	
 		   			context.strokeRect(400, 40, 60, 60);
-    			}
-    			else {
-    				context.clearRect(400, 40, 60, 60);
     			}
     		});
 		</script>
