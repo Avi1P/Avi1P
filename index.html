@@ -31,7 +31,7 @@
 	    	var canvas = document.getElementById('canvas');
 	    	var context = canvas.getContext('2d');
 	       	context.canvas.width= window.innerWidth-20;
-		    context.canvas.height= 50;
+		    context.canvas.height= 500;
 
 		    //Draws logo
 		    logo = new Image();
@@ -42,16 +42,15 @@
 		    context.font = "25px Qontra";
 		    //context.fillText("HOME     ABOUT US     SERVICES     TESTIMONIALS     CONTACT", 400, 35)
 		   	
+
 		   	context.strokeRect(400, 10, 60, 30);
 		   	context.fillText("Home",405, 35);
-		   	canvas.addEventListener('click', function(event) {
-		   		if (
-        			event.x > 410 && 
-    			    event.x < 440 &&
-    			    event.y > 20 && 
-    			    event.y < 50
-    		  	) {	
-		   			alert('Button was clicked!');
+		   	canvas.addEventListener('mosueover', function(event) {
+		   		if (event.x > 410 && event.x < 470 && event.y > 20 && event.y < 50) {	
+		   			context.strokeRect(400, 40, 60, 60);
+    			}
+    			else {
+    				context.clearRect(400, 40, 60, 60);
     			}
     		});
 		</script>
