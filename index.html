@@ -38,12 +38,19 @@
 	    context.drawImage(logo, 0, 0);
 	   	context.font = "25px Qontra";
 
-	    function dropdown(x, y, width, height, name) {
-	    	context.strokeRect(x, y, width, height);
-	   		context.fillText(name, (x+5), (y+height-5));
+	    function dropdown(menu) {
+	    	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
+	   		context.fillText(menu.name, (menu.x+5), (menu.y+menu.height-5));
 	    }
-	    dropdown(400, 10, 60, 30, "Home");
-	    dropdown(470, 10, 60, 30, "About");
+
+	    var menuHome = {
+	    	x:400,
+	    	y:10,
+	    	width:60,
+	    	height:30,
+	    	name:"Home";
+	    }
+	    dropdown(menuHome);
 		   	
 	   	var x = 0;
 	   	var y = 0;
