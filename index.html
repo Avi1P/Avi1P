@@ -26,40 +26,37 @@
 			font-family: 'Qontra', sans-serif;
 		}
 	</style>
-	    <script>
-	    	//Creates menu bar
-	    	var canvas = document.getElementById('canvas');
-	    	var context = canvas.getContext('2d');
-	       	context.canvas.width= window.innerWidth-20;
-		    context.canvas.height= 500;
-		    //Draws logo
-		    logo = new Image();
-		    logo.src = "logo.png"
-		    context.drawImage(logo, 0, 0);
-		   	context.font = "25px Qontra";
+	<script>
+    	//Creates menu bar
+    	var canvas = document.getElementById('canvas');
+    	var context = canvas.getContext('2d');
+       	context.canvas.width= window.innerWidth-20;
+	    context.canvas.height= 500;
+	    //Draws logo
+	    logo = new Image();
+	    logo.src = "logo.png"
+	    context.drawImage(logo, 0, 0);
+	   	context.font = "25px Qontra";
 
-		    fucntion dropdown(x, y, width, height, name) {
-		    	context.strokeRect(x, y, width, height);
-		   		context.fillText(name, (x+5), (y+height-5));
-		    }
-	
-		    dropdown(400, 10, 60, 30, "Home");
-		    dropdown(470, 10, 60, 30, "About");
-			   	
-
-			   	var x = 0;
-			   	var y = 0;
-			   	canvas.addEventListener('mousemove', function(event) {
-			   		x = event.x;
-			   		y = event.y;
-
-			   		if (x > 410 && x < 470 && y > 20 && y < 50) {	
-			   			context.strokeRect(400, 40, 60, 60);
-	    			}
-	    			else if (!(x > 410 && x < 470 && y > 20 && y < 110)) {
-	    				context.clearRect(399, 40, 62, 62);
-	    			}
-	    		}, false);
-			</script>
-		</body>
-	</html>	
+	    var dropdown = newFunction(x, y, width, height, name) {
+	    	context.strokeRect(x, y, width, height);
+	   		context.fillText(name, (x+5), (y+height-5));
+	    }
+	    dropdown(400, 10, 60, 30, "Home");
+	    dropdown(470, 10, 60, 30, "About");
+		   	
+	   	var x = 0;
+	   	var y = 0;
+	   	canvas.addEventListener('mousemove', function(event) {
+	   		x = event.x;
+	   		y = event.y;
+		   		if (x > 410 && x < 470 && y > 20 && y < 50) {	
+		   			context.strokeRect(400, 40, 60, 60);
+    			}
+    			else if (!(x > 410 && x < 470 && y > 20 && y < 110)) {
+    				context.clearRect(399, 40, 62, 62);
+    			}
+   		}, false);
+	</script>
+</body>
+</html>	
