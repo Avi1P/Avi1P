@@ -14,7 +14,7 @@
 			width: 0px; 
 			background: transparent;
 		}
-  		</style>
+  	</style>
 </p>
 <body>
     <canvas id="canvas"></canvas>
@@ -38,8 +38,11 @@
 	    context.drawImage(logo, 0, 0);
 	   	context.font = "25px Qontra";
 
-	    context.strokeRect(400, 10, 60, 30);
-		context.fillText("Home",405, 35);
+	    var dropdown = newFunction(x, y, width, height, name) {
+	    	
+	    }
+	    dropdown(400, 10, 60, 30, "Home");
+	    dropdown(470, 10, 60, 30, "About");
 		   	
 	   	var x = 0;
 	   	var y = 0;
