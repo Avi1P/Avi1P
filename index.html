@@ -45,10 +45,10 @@
 	    }
 
 	    function dropDown(menu, x, y) {
-	    	if (x > menu.x && x < (menu.x+menu.width) && y > menu.y && y < (menu.y+menu.height)) {	
+	    	if (x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+10)) {	
 		   		context.strokeRect(menu.x, menu.y+30, menu.width, 60);
     		}
-    		else if (!(x > menu.x && x < (menu.x+menu.width) && y > menu.y && y < (menu.y+menu.height+60))) {
+    		else if (!(x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+70))) {
    				context.clearRect((menu.x-1), (menu.y+30), (menu.width+2), 62);
    			}
 	    }
