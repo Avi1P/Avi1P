@@ -40,7 +40,7 @@
 	    tooth.src = "tooth.jpeg"
 
 	    context.drawImage(logo, 0, 0);
-	    context.drawImage(tooth, 700, 50)
+	    
 	   	context.font = "25px Qontra";
 
 	    function menuButton(menu) {
@@ -83,6 +83,11 @@
  	  		// About Button
     		dropDown(menuAbout, event.x, event.y);
    		}, false);
+
+	   	canvas.addEventListener('scroll', function(event) {
+	   		context.drawImage(tooth, 700, 0)
+   		}, false);
+
 	</script>
 </body>
 </html>	
