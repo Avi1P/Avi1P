@@ -39,8 +39,8 @@
 	   	context.font = "25px Qontra";
 
 	    function dropdown(menu) {
-	    	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
-	   		context.fillText(menu.name, (menu.x+5), (menu.y+menu.height-5));
+	    	context.strokeRect(menu.x(), menu.y(), menu.width(), menu.height());
+	   		context.fillText(menu.name(), (menu.x()+5), (menu.y()+menu.height()-5));
 	    }
 
 	    var menuHome = {
