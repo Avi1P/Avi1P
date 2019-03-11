@@ -50,12 +50,20 @@
 	   	canvas.addEventListener('mousemove', function(event) {
 	   		x = event.x;
 	   		y = event.y;
-		   		if (x > 410 && x < 470 && y > 20 && y < 50) {	
-		   			context.strokeRect(400, 40, 60, 60);
-    			}
-    			else if (!(x > 410 && x < 470 && y > 20 && y < 110)) {
-    				context.clearRect(399, 40, 62, 62);
-    			}
+	   		//Home Button
+		   	if (x > 410 && x < 470 && y > 20 && y < 50) {	
+		   		context.strokeRect(400, 40, 60, 60);
+    		}
+    		else if (!(x > 410 && x < 470 && y > 20 && y < 110)) {
+   				context.clearRect(399, 40, 62, 62);
+   			}
+ 	  		// About Button
+    		if (x > 480 && x < 550 && y > 20 && y < 50) {	
+	   			context.strokeRect(400, 40, 60, 60);
+   			}
+   			else if (!(x > 480 && x < 550 && y > 20 && y < 110)) {
+   				context.clearRect(399, 40, 62, 62);
+   			}
    		}, false);
 	</script>
 </body>
