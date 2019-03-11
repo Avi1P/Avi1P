@@ -31,7 +31,7 @@
     	var canvas = document.getElementById('canvas');
     	var context = canvas.getContext('2d');
        	context.canvas.width= window.innerWidth-20;
-	    context.canvas.height= 5000;
+	    context.canvas.height= 1200;
 	    //Draws logo
 	    logo = new Image();
 	    logo.src = "logo.png"
@@ -85,7 +85,7 @@
    		}, false);
 
 	   	canvas.addEventListener('wheel', function(event) {
-	   		context.drawImage(tooth, 700, 0)
+	   		context.drawImage(tooth, 700, pageYOffset)
    		});
 
 	</script>
