@@ -45,8 +45,6 @@
 	    }
 
 	    function dropDown(menu, x, y) {
-	    	menu.x = menu.x+10;
-	    	menu.y = menu.y+10;
 	    	if (x > menu.x && x < (menu.x+menu.width) && y > menu.y && y < (menu.y+menu.width)) {	
 		   		context.strokeRect(menu.x, menu.y, menu.width, 60);
     		}
