@@ -45,12 +45,18 @@
 
 		   	context.strokeRect(400, 10, 60, 30);
 		   	context.fillText("Home",405, 35);
+
+		   	var x = 0;
+		   	var y = 0;
 		   	canvas.addEventListener('mousemove', function(event) {
-		   		if (event.x > 410 && event.x < 470 && event.y > 20 && event.y < 50) {	
+		   		x = event.x;
+		   		y = event.y;
+
+		   		if (x > 410 && x < 470 && y > 20 && y < 50) {	
 		   			context.strokeRect(400, 40, 60, 60);
     			}
-    			else {
-    				context.clearRect(399, 41, 62, 62);
+    			else if (x > 410 && x < 470 && y > 20 && y < 110) {
+    				context.clearRect(399, 39, 62, 62);
     			}
     		}, false);
 		</script>
