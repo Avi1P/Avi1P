@@ -38,11 +38,23 @@
 	    context.drawImage(logo, 0, 0);
 	   	context.font = "25px Qontra";
 
-	    function dropdown(menu) {
+	    function menuButton(menu) {
 	    	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
 	   		context.fillText(menu.name, (menu.x+5), (menu.y+menu.height-5));
 
 	    }
+
+	    function dropDown(menu, x, y) {
+	    	menu.x = menu.x+10;
+	    	menu.y = menu.y+10;
+	    	if (x > menu.x && x < (menu.x+menu.width) && y > menu.y && y < (menu.y+menu.width)) {	
+		   		context.strokeRect(menu.x, menu.y, menu.width, 60);
+    		}
+    		else if (!(x > menu.x && x < (menu.x+menu.width) && y > menu.y && y < (menu.y+menu.width+60))) {
+   				context.clearRect((menu.x-1), (menu.y), (menu.width+2), 62);
+   			}
+	    }
+
 	    var menuHome = {
 	    	x:400,
 	    	y:10,
@@ -59,28 +71,14 @@
 	    	name:"About"
 	    };
 
-	    dropdown(menuHome);
-		dropdown(menuAbout);
+	    menuButton(menuHome);
+		menuButton(menuAbout);
 
-	   	var x = 0;
-	   	var y = 0;
 	   	canvas.addEventListener('mousemove', function(event) {
-	   		x = event.x;
-	   		y = event.y;
 	   		//Home Button
-		   	if (x > 410 && x < 470 && y > 20 && y < 50) {	
-		   		context.strokeRect(400, 40, 60, 60);
-    		}
-    		else if (!(x > 410 && x < 470 && y > 20 && y < 110)) {
-   				context.clearRect(399, 40, 62, 62);
-   			}
+		   	dropDown(menuHome, event.x, event.y);
  	  		// About Button
-    		if (x > 480 && x < 550 && y > 20 && y < 50) {	
-	   			context.strokeRect(470, 40, 60, 60);
-   			}
-   			else if (!(x > 480 && x < 550 && y > 20 && y < 110)) {
-   				context.clearRect(469, 40, 62, 62);
-   			}
+    		dropDown(menuHome, event.x, event.y);
    		}, false);
 	</script>
 </body>
