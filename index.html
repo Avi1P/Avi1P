@@ -122,9 +122,9 @@
    		}, false);
 
 	   	canvas.addEventListener('wheel', function(event) {
-	   		smoothScroll(context);
 	   		context.clearRect(700, 0, 200, 1200);
 	   		context.drawImage(tooth, 700, pageYOffset);
+	   		smoothScroll(context);
    		});
 
 	</script>
