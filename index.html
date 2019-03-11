@@ -1,51 +1,50 @@
-		<html>
-		<p>
-			<style>
-	        	#canvas { 
-					border: 1px solid #666; 
-					background-color: white;
-					border-radius: 20px;
-				}
-				html {
-	    			overflow: scroll;
-	   				overflow-x: hidden;
-				}
-				::-webkit-scrollbar { 
-					width: 0px; 
-					background: transparent;
-				}
-	   		</style>
-		</p>
-		<body>
-		    <canvas id="canvas"></canvas>
-		    <style>
-				@font-face {
-					font-family: Qontra; src: url('Qontra.otf');
-				}
-				h1 {
-					font-family: 'Qontra', sans-serif;
-				}
-	   		</style>
-		    <script>
-		    	//Creates menu bar
-		    	var canvas = document.getElementById('canvas');
-		    	var context = canvas.getContext('2d');
-		       	context.canvas.width= window.innerWidth-20;
-			    context.canvas.height= 500;
+<html>
+<p>
+	<style>
+       	#canvas { 
+			border: 1px solid #666; 
+			background-color: white;
+			border-radius: 20px;
+		}
+		html {
+   			overflow: scroll;
+			overflow-x: hidden;
+		}
+		::-webkit-scrollbar { 
+			width: 0px; 
+			background: transparent;
+		}
+  		</style>
+</p>
+<body>
+    <canvas id="canvas"></canvas>
+    <style>
+		@font-face {
+			font-family: Qontra; src: url('Qontra.otf');
+		}
+		h1 {
+			font-family: 'Qontra', sans-serif;
+		}
+	</style>
+	    <script>
+	    	//Creates menu bar
+	    	var canvas = document.getElementById('canvas');
+	    	var context = canvas.getContext('2d');
+	       	context.canvas.width= window.innerWidth-20;
+		    context.canvas.height= 500;
+		    //Draws logo
+		    logo = new Image();
+		    logo.src = "logo.png"
+		    context.drawImage(logo, 0, 0);
+		   	context.font = "25px Qontra";
 
-			    //Draws logo
-			    logo = new Image();
-			    logo.src = "logo.png"
-			    context.drawImage(logo, 0, 0);
-			   	context.font = "25px Qontra";
-			    fucntion dropdown(x, y, width, height, name) {
-			    	
-			    	context.strokeRect(x, y, width, height);
-			   		context.fillText(name, x+5, y+height-5);
-			    }
-
-			    dropdown(400, 10, 60, 30, "Home");
-			    dropdown(470, 10, 60, 30, "About");
+		    fucntion dropdown(x, y, width, height, name) {
+		    	context.strokeRect(x, y, width, height);
+		   		context.fillText(name, (x+5), (y+height-5));
+		    }
+	
+		    dropdown(400, 10, 60, 30, "Home");
+		    dropdown(470, 10, 60, 30, "About");
 			   	
 
 			   	var x = 0;
