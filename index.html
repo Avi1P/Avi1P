@@ -39,12 +39,17 @@
 			    context.drawImage(logo, 0, 0);
 
 
-			    context.font = "25px Qontra";
+			    
 			    //context.fillText("HOME     ABOUT US     SERVICES     TESTIMONIALS     CONTACT", 400, 35)
 			   	
+			    fucntion dropdown(x, y, width, height, name) {
+			    	context.font = "25px Qontra";
+			    	context.strokeRect(x, y, width, height);
+			   		context.fillText(name,x+5, y+height-5);
+			    }
 
-			   	context.strokeRect(400, 10, 60, 30);
-			   	context.fillText("Home",405, 35);
+			    dropdown(400, 10, 60, 30, "Home");
+			   	
 
 			   	var x = 0;
 			   	var y = 0;
