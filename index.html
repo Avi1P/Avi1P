@@ -67,7 +67,7 @@
 		        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
 		    }
 		}
-		smoothScroll(context);
+
 
 	    //Draws logo
 	    logo = new Image();
@@ -122,6 +122,7 @@
    		}, false);
 
 	   	canvas.addEventListener('wheel', function(event) {
+	   		smoothScroll(context);
 	   		context.clearRect(700, 0, 200, 1200);
 	   		context.drawImage(tooth, 700, pageYOffset);
    		});
