@@ -1,106 +1,106 @@
 <html>
-<p>
-	<style>
-		html {
-   			overflow: scroll;
-			overflow-x: hidden;
-			scroll-behavior: smooth;
-		}
-       	#canvas { 
-			border: 1px solid #666; 
-			background-color: white;
-			border-radius: 20px;
-			position: absolute;
-			left:10;
-			top:10;
-		}
-		
-		::-webkit-scrollbar { 
-			width: 0px; 
-			background: transparent;
-		}
-		#tooth {
-  			width: 46px;
-  			height: 44px;
-  			background: url(tooth.jpeg) 950 0;
-  			position: absolute;
-  			left: 1100;
-		}
-	</style>
-	<img id="tooth" src="tooth.jpeg" width="1" height="1">
-    <canvas id="canvas"></canvas>
-    <style>
-		@font-face {	
-			font-family: Qontra; src: url('Qontra.otf');
-		}
-		h1 {
-			font-family: 'Qontra', sans-serif;
-		}
-	</style>
-	<script>
-    	//Creates menu bar
-    	var canvas = document.getElementById('canvas');
-    	var context = canvas.getContext('2d');
-       	context.canvas.width= window.innerWidth-200;
-	    context.canvas.height= 1200;
+	<p>
+		<style>
+			html {
+	   			overflow: scroll;
+				overflow-x: hidden;
+				scroll-behavior: smooth;
+			}
+	       	#canvas { 
+				border: 1px solid #666; 
+				background-color: white;
+				border-radius: 20px;
+				position: absolute;
+				left:10;
+				top:10;
+			}
+			
+			::-webkit-scrollbar { 
+				width: 0px; 
+				background: transparent;
+			}
+			#tooth {
+	  			width: 46px;
+	  			height: 44px;
+	  			background: url(tooth.jpeg);
+	  			position: absolute;
+	  			left: 1000;
+			}
+		</style>
+		<img id="tooth" src="tooth.jpeg" width="1" height="1">
+	    <canvas id="canvas"></canvas>
+	    <style>
+			@font-face {	
+				font-family: Qontra; src: url('Qontra.otf');
+			}
+			h1 {
+				font-family: 'Qontra', sans-serif;
+			}
+		</style>
+		<script>
+	    	//Creates menu bar
+	    	var canvas = document.getElementById('canvas');
+	    	var context = canvas.getContext('2d');
+	       	context.canvas.width= window.innerWidth-200;
+		    context.canvas.height= 1200;
 
-	    //Draws logo
-	    logo = new Image();
-	    logo.src = "logo.png"
-	    //Draws tooth
-	    tooth = new Image();
-	    tooth.src = "tooth.jpeg"
+		    //Draws logo
+		    logo = new Image();
+		    logo.src = "logo.png"
+		    //Draws tooth
+		    tooth = new Image();
+		    tooth.src = "tooth.jpeg"
 
-	    context.drawImage(logo, 0, 0);
-	    
-	   	context.font = "25px Qontra";
+		    context.drawImage(logo, 0, 0);
+		    
+		   	context.font = "25px Qontra";
 
-	    function menuButton(menu) {
-	    	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
-	   		context.fillText(menu.name, (menu.x+5), (menu.y+menu.height-5));
+		    function menuButton(menu) {
+		    	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
+		   		context.fillText(menu.name, (menu.x+5), (menu.y+menu.height-5));
 
-	    }
+		    }
 
-	    function dropDown(menu, x, y) {
-	    	if (x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+10)) {	
-		   		context.strokeRect(menu.x, menu.y+30, menu.width, 60);
-    		}
-    		else if (!(x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+70))) {
-   				context.clearRect((menu.x-1), (menu.y+30), (menu.width+2), 62);
-   			}
-	    }
+		    function dropDown(menu, x, y) {
+		    	if (x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+10)) {	
+			   		context.strokeRect(menu.x, menu.y+30, menu.width, 60);
+	    		}
+	    		else if (!(x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+70))) {
+	   				context.clearRect((menu.x-1), (menu.y+30), (menu.width+2), 62);
+	   			}
+		    }
 
-	    var menuHome = {
-	    	x:400,
-	    	y:10,
-	    	width:60,
-	    	height:30,
-	    	name:"Home"
-	    };
+		    var menuHome = {
+		    	x:400,
+		    	y:10,
+		    	width:60,
+		    	height:30,
+		    	name:"Home"
+		    };
 
-	    var menuAbout = {
-	    	x:470,
-	    	y:10,
-	    	width:60,
-	    	height:30,
-	    	name:"About"
-	    };
+		    var menuAbout = {
+		    	x:470,
+		    	y:10,
+		    	width:60,
+		    	height:30,
+		    	name:"About"
+		    };
 
-	    menuButton(menuHome);
-		menuButton(menuAbout);
+		    menuButton(menuHome);
+			menuButton(menuAbout);
 
-	   	canvas.addEventListener('mousemove', function(event) {
-	   		//Home Button
-		   	dropDown(menuHome, event.x, event.y);
- 	  		// About Button
-    		dropDown(menuAbout, event.x, event.y);
-   		}, false);
+		   	canvas.addEventListener('mousemove', function(event) {
+		   		//Home Button
+			   	dropDown(menuHome, event.x, event.y);
+	 	  		// About Button
+	    		dropDown(menuAbout, event.x, event.y);
+	   		}, false);
 
-	   	canvas.addEventListener('wheel', function(event) {
-	   		//context.clearRect(700, 0, 200, 1200);
-	   		//context.drawImage(tooth, 700, pageYOffset);
-   		});
+		   	canvas.addEventListener('wheel', function(event) {
+		   		//context.clearRect(700, 0, 200, 1200);
+		   		//context.drawImage(tooth, 700, pageYOffset);
+	   		});
 
-	</script>
-</p>
+		</script>
+	</p>
 </html>	
