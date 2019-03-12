@@ -45,63 +45,48 @@
 	
 	<!-- Opens JavaScript for page styleing -->
 	<script>
-	    	//Creates the canvas bar
-	    	var canvas = document.getElementById('canvas');
-	    	var context = canvas.getContext('2d');
-	       	context.canvas.width= window.innerWidth-200;
-		    context.canvas.height= 1200;
+	   	//Creates the canvas bar
+	   	var canvas = document.getElementById('canvas');
+	   	var context = canvas.getContext('2d');
+	   	context.canvas.width= window.innerWidth-200;
+		context.canvas.height= 1200;
 
-		    //Draws logo
-		    logo = new Image();
-		    logo.src = "logo.png"
-		    context.drawImage(logo, 0, 0);
-		    
-		    function menuButton(menu) {
-		    	context.font = "25px Qontra";
-		    	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
-		   		context.fillText(menu.name, (menu.x+5), (menu.y+menu.height-5));
+		//Draws logo
+		logo = new Image();
+		logo.src = "logo.png"
+		context.drawImage(logo, 0, 0);
+		
+		//A function that draws Menu Tabs    
+		function menuButton(menu) {
+		  	context.font = "25px Qontra";
+		   	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
+			context.fillText(menu.name, (menu.x+5), (menu.y+menu.height-5));
+	    }
 
-		    }
+	    //A function that handles the dropdown of Menu Tabs
+		function dropDown(menu, x, y) {
+		    if (x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+10)) {	
+				context.strokeRect(menu.x, menu.y+30, menu.width, 60);
+	    	}
+	    	else if (!(x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+70))) {
+	   			context.clearRect((menu.x-1), (menu.y+30), (menu.width+2), 62);
+	   		}
+		}
 
-		    function dropDown(menu, x, y) {
-		    	if (x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+10)) {	
-			   		context.strokeRect(menu.x, menu.y+30, menu.width, 60);
-	    		}
-	    		else if (!(x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+70))) {
-	   				context.clearRect((menu.x-1), (menu.y+30), (menu.width+2), 62);
-	   			}
-		    }
+		//Info for Menu Tabs
+		var menuHome = { x:400, y:10, width:60,	height:30, name:"Home" };
+		var menuAbout = { x:470, y:10, width:60, height:30, name:"About" };
 
-		    var menuHome = {
-		    	x:400,
-		    	y:10,
-		    	width:60,
-		    	height:30,
-		    	name:"Home"
-		    };
+		menuButton(menuHome);
+		menuButton(menuAbout);
 
-		    var menuAbout = {
-		    	x:470,
-		    	y:10,
-		    	width:60,
-		    	height:30,
-		    	name:"About"
-		    };
-
-		    menuButton(menuHome);
-			menuButton(menuAbout);
-
-		   	canvas.addEventListener('mousemove', function(event) {
-		   		//Home Button
-			   	dropDown(menuHome, event.x, event.y);
-	 	  		// About Button
-	    		dropDown(menuAbout, event.x, event.y);
-	   		}, false);
-
-		   	canvas.addEventListener('wheel', function(event) {
-		   		//context.clearRect(700, 0, 200, 1200);
-		   		//context.drawImage(tooth, 700, pageYOffset);
-	   		});
-
-		</script>
+		//Checks if mouse moves and handles accordingly
+		canvas.addEventListener('mousemove', function(event) {
+			//Home Button
+			dropDown(menuHome, event.x, event.y);
+	 	  	// About Button
+	    	dropDown(menuAbout, event.x, event.y);
+	   	}, false);
+	</script>
+	
 </html>	
