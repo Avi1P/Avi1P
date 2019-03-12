@@ -1,41 +1,48 @@
 <html>
-		<style>
-			html {
-	   			overflow: scroll;
-				overflow-x: hidden;
-				scroll-behavior: smooth;
-			}
-			::-webkit-scrollbar { 
-				width: 0px; 
-				background: transparent;
-			}
-	       	#canvas { 
-				border: 1px solid #666; 
-				background-color: white;
-				border-radius: 20px;
-				position: absolute;
-				left:10;
-				top:10;
-			}
-			#tooth {
-	  			width: 46px;
-	  			height: 44px;
-	  			background: url(tooth.jpeg);
-	  			position: absolute;
-	  			left: 1000;
-			}
-		</style>
-		<img id="tooth" src="tooth.jpeg" width="1" height="1">
-	    <canvas id="canvas"></canvas>
-	    <style>
-			@font-face {	
-				font-family: Qontra; src: url('Qontra.otf');
-			}
-			h1 {
-				font-family: 'Qontra', sans-serif;
-			}
-		</style>
-		<script>
+	
+	<style>
+		/*Defines and Disables Scrollbar*/
+		html {
+   			overflow: scroll;
+			overflow-x: hidden;
+			scroll-behavior: smooth;
+		}
+		::-webkit-scrollbar { 
+			width: 0px; 
+			background: transparent;
+		}
+		/* Defines Canvas to later be drawn on*/
+       	#canvas { 
+			border: 1px solid #666; 
+			background-color: white;
+			border-radius: 20px;
+			position: absolute;
+			left:10;
+			top:10;
+		}
+		/* Defines Tooth image */
+		#tooth {
+	  		width: 46px;
+	  		height: 44px;
+	  		background: url(tooth.jpeg);
+	  		position: absolute;
+	  		left: 1000;
+		}
+
+		/* Creates the Qontra font */
+		@font-face {	
+			font-family: Qontra; src: url('Qontra.otf');
+		}
+		h1 {
+			font-family: 'Qontra', sans-serif;
+		}
+	</style>
+	
+	<!-- Creates Canvas and Tooth elements -->
+	<canvas id="canvas"></canvas>
+	<img id="tooth" src="tooth.jpeg" width="1" height="1">
+	
+	<script>
 	    	//Creates menu bar
 	    	var canvas = document.getElementById('canvas');
 	    	var context = canvas.getContext('2d');
