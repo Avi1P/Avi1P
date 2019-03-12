@@ -1,6 +1,11 @@
 <html>
 <p>
 	<style>
+		html {
+   			overflow: scroll;
+			overflow-x: hidden;
+			scroll-behavior: smooth;
+		}
        	#canvas { 
 			border: 1px solid #666; 
 			background-color: white;
@@ -9,11 +14,7 @@
 			left:10;
 			top:10;
 		}
-		html {
-   			overflow: scroll;
-			overflow-x: hidden;
-			scroll-behavior: smooth;
-		}
+		
 		::-webkit-scrollbar { 
 			width: 0px; 
 			background: transparent;
@@ -21,14 +22,12 @@
 		#tooth {
   			width: 46px;
   			height: 44px;
-  			background: url(tooth.jpeg) 1000 -400;
+  			background: url(tooth.jpeg) 950 0;
   			position: absolute;
   			left: 1100;
 		}
 	</style>
 	<img id="tooth" src="tooth.jpeg" width="1" height="1">
-</p>
-<body>
     <canvas id="canvas"></canvas>
     <style>
 		@font-face {	
@@ -103,6 +102,5 @@
    		});
 
 	</script>
-	
-</body>
+</p>
 </html>	
