@@ -62,9 +62,9 @@
 		//A function that draws Menu Tabs    
 		function menuButton(menu) {
 		  	context.font = "25px Qontra";
-		  	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
+		  	//context.strokeRect(menu.x, menu.y, menu.width, menu.height);
 		   	var textWidth = context.measureText(menu.name).width;
-			context.fillText(Math.round(textWidth), menu.x+0.5*(100-textWidth), (menu.y+menu.height-25));
+			context.fillText(menu.name, menu.x, (menu.y+menu.height-25));
 	    }
 
 	    //A function that handles the dropdown of Menu Tabs
@@ -78,11 +78,11 @@
 		}
 
 		//Info for Menu Tabs
-		var menuHome = { x:400, y:10, width:100, height:30, name:"Home" };
-		var menuAbout = { x:500, y:10, width:100, height:30, name:"About" };
-		var menuServices = { x:600, y:10, width:100, height:30, name:"Service" };
-		var menuTestimonials = { x:700, y:10, width:100, height:30, name:"Testimonials" };
-		var menuContact_Us = { x:800, y:10, width:100, height:30, name:"Contact Us" };
+		var menuHome = { x:400, y:10, width:50, height:30, name:"Home" };
+		var menuAbout = { x:460, y:10, width:55, height:30, name:"About" };
+		var menuServices = { x:525, y:10, width:67, height:30, name:"Service" };
+		var menuTestimonials = { x:602, y:10, width:110, height:30, name:"Testimonials" };
+		var menuContact_Us = { x:722, y:10, width:98, height:30, name:"Contact Us" };
 
 		menuButton(menuHome);
 		menuButton(menuAbout);
