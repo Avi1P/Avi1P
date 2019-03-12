@@ -51,6 +51,9 @@
 	   	context.canvas.width= window.innerWidth - 20;
 		context.canvas.height= 1200;
 
+		context.textAlign='left';
+		context.textBaseline='top';
+
 		//Draws logo
 		logo = new Image();
 		logo.src = "logo.png"
@@ -92,6 +95,13 @@
 			dropDown(menuHome, event.x, event.y);
 	 	  	// About Button
 	    	dropDown(menuAbout, event.x, event.y);
+	    	//Services Button
+			dropDown(menuServices, event.x, event.y);
+	 	  	//Testimonials Button
+	    	dropDown(menuTestimonials, event.x, event.y);
+	    	//Contact Us Button
+	    	dropDown(menuContact_Us, event.x, event.y);
+
 	   	}, false);
 	</script>
 
