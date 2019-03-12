@@ -64,7 +64,7 @@
 		  	context.font = "25px Qontra";
 		  	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
 		   	var textWidth = context.measureText(menu.name).width;
-			context.fillText(menu.name, menu.x+0.5*(100-textWidth), (menu.y+menu.height-25));
+			context.fillText(textWidth, menu.x+0.5*(100-textWidth), (menu.y+menu.height-25));
 	    }
 
 	    //A function that handles the dropdown of Menu Tabs
