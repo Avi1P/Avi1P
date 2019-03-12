@@ -62,8 +62,9 @@
 		//A function that draws Menu Tabs    
 		function menuButton(menu) {
 		  	context.font = "25px Qontra";
-		   	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
-			context.fillText(menu.name, (menu.x+5), (menu.y+menu.height-5));
+		  	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
+		   	
+			context.fillText(menu.name, (menu.x+(0.5*(100-context.measureText('menu.name').width)), (menu.y+menu.height-25));
 	    }
 
 	    //A function that handles the dropdown of Menu Tabs
@@ -77,11 +78,11 @@
 		}
 
 		//Info for Menu Tabs
-		var menuHome = { x:400, y:10, width:60,	height:30, name:"Home" };
-		var menuAbout = { x:470, y:10, width:60, height:30, name:"About" };
-		var menuServices = { x:540, y:10, width:60, height:30, name:"About" };
-		var menuTestimonials = { x:610, y:10, width:60, height:30, name:"Testimonials" };
-		var menuContact_Us = { x:680, y:10, width:60, height:30, name:"Contact Us" };
+		var menuHome = { x:400, y:10, width:100, height:30, name:"Home" };
+		var menuAbout = { x:500, y:10, width:100, height:30, name:"About" };
+		var menuServices = { x:600, y:10, width:100, height:30, name:"Services" };
+		var menuTestimonials = { x:700, y:10, width:100, height:30, name:"Test" };
+		var menuContact_Us = { x:800, y:10, width:100, height:30, name:"Contact" };
 
 		menuButton(menuHome);
 		menuButton(menuAbout);
