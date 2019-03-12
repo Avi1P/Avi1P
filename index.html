@@ -1,5 +1,6 @@
 <html>
 	
+	<!-- Opens CSS for page styleing -->
 	<style>
 		/*Defines and Disables Scrollbar*/
 		html {
@@ -42,8 +43,9 @@
 	<canvas id="canvas"></canvas>
 	<img id="tooth" src="tooth.jpeg" width="1" height="1">
 	
+	<!-- Opens JavaScript for page styleing -->
 	<script>
-	    	//Creates menu bar
+	    	//Creates the canvas bar
 	    	var canvas = document.getElementById('canvas');
 	    	var context = canvas.getContext('2d');
 	       	context.canvas.width= window.innerWidth-200;
@@ -52,15 +54,10 @@
 		    //Draws logo
 		    logo = new Image();
 		    logo.src = "logo.png"
-		    //Draws tooth
-		    tooth = new Image();
-		    tooth.src = "tooth.jpeg"
-
 		    context.drawImage(logo, 0, 0);
 		    
-		   	context.font = "25px Qontra";
-
 		    function menuButton(menu) {
+		    	context.font = "25px Qontra";
 		    	context.strokeRect(menu.x, menu.y, menu.width, menu.height);
 		   		context.fillText(menu.name, (menu.x+5), (menu.y+menu.height-5));
 
