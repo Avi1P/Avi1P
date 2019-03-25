@@ -14,16 +14,8 @@
 		}
 		/* Defines Canvas to later be drawn on*/
        	#canvas { 
-			border: 0px solid #666; 
+			border: 1px solid #666; 
 			background-color: white;
-			border-radius: 20px;
-			position: absolute;
-			left:10;
-			top:10;
-		}
-		#ground { 
-			border: 0px solid #666; 
-			background-color: green;
 			border-radius: 20px;
 			position: absolute;
 			left:10;
@@ -59,66 +51,9 @@
 	   	var canvas = document.getElementById('canvas');
 	   	var context = canvas.getContext('2d');
 	   	context.canvas.width= window.innerWidth - 20;
-		context.canvas.height= 500;
-
-		context.textAlign='left';
-		context.textBaseline='top';
-
-		var ground = document.getElementById('ground');
-		var scene = ground.getContext('2d');
-		scene.ground.width = 20000;
-		scene.ground.height = 200;
-
-
-		//Draws logo
-		logo = new Image();
-		logo.src = "logo.png"
-		context.drawImage(logo, 0, 0);
+		context.canvas.height= window.innerHeight;
+;
+		context.fillRect(0, window.innerHeight - 200, 20000, 200);
 		
-		//A function that draws Menu Tabs    
-		function menuButton(menu) {
-		  	context.font = "25px Qontra";
-		  	//context.strokeRect(menu.x, menu.y, menu.width, menu.height);
-		   	var textWidth = context.measureText(menu.name).width;
-			context.fillText(menu.name, menu.x, (menu.y+menu.height-25));
-	    }
-
-	    //A function that handles the dropdown of Menu Tabs
-		function dropDown(menu, x, y) {
-		    if (x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+10)) {	
-				context.strokeRect(menu.x, menu.y+30, menu.width, 60);
-	    	}
-	    	else if (!(x > (menu.x+10) && x < (menu.x+menu.width+10) && y > (menu.y+10) && y < (menu.y+menu.height+70))) {
-	   			context.clearRect((menu.x-1), (menu.y+30), (menu.width+2), 62);
-	   		}
-		}
-
-		//Info for Menu Tabs
-		var menuHome = { x:400, y:10, width:50, height:30, name:"Home" };
-		var menuAbout = { x:470, y:10, width:55, height:30, name:"About" };
-		var menuServices = { x:545, y:10, width:67, height:30, name:"Service" };
-		var menuTestimonials = { x:632, y:10, width:110, height:30, name:"Testimonials" };
-		var menuContact_Us = { x:762, y:10, width:98, height:30, name:"Contact Us" };
-
-		menuButton(menuHome);
-		menuButton(menuAbout);
-		menuButton(menuServices);
-		menuButton(menuTestimonials);
-		menuButton(menuContact_Us);
-
-		//Checks if mouse moves and handles accordingly
-		canvas.addEventListener('mousemove', function(event) {
-			//Home Button
-			dropDown(menuHome, event.x, event.y);
-	 	  	// About Button
-	    	dropDown(menuAbout, event.x, event.y);
-	    	//Services Button
-			dropDown(menuServices, event.x, event.y);
-	 	  	//Testimonials Button
-	    	dropDown(menuTestimonials, event.x, event.y);
-	    	//Contact Us Button
-	    	dropDown(menuContact_Us, event.x, event.y);
-
-	   	}, false);
 	</script>
 </html>	
