@@ -6,6 +6,7 @@
 		html {
    			overflow: scroll;
 			scroll-behavior: smooth;
+			scroll-direction: horizontal;
 		}
 		::-webkit-scrollbar { 
 			width: 0px; 
@@ -49,9 +50,9 @@
 	   	//Creates the canvas bar
 	   	var canvas = document.getElementById('canvas');
 	   	var context = canvas.getContext('2d');
-	   	context.canvas.width= window.innerWidth - 20;
+	   	context.canvas.width= 20000;
 		context.canvas.height= window.innerHeight;
-		context.fillStyle = "green";
+		context.fillStyle = "green";	
 		context.fillRect(0, window.innerHeight - 200, 20000, 200);
 		
 	</script>
