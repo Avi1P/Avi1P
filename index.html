@@ -5,7 +5,6 @@
 		/*Defines and Disables Scrollbar*/
 		html {
    			overflow: scroll;
-			overflow-x: hidden;
 			scroll-behavior: smooth;
 		}
 		::-webkit-scrollbar { 
@@ -52,7 +51,7 @@
 	   	var context = canvas.getContext('2d');
 	   	context.canvas.width= window.innerWidth - 20;
 		context.canvas.height= window.innerHeight;
-;
+		context.fillStyle = "green";
 		context.fillRect(0, window.innerHeight - 200, 20000, 200);
 		
 	</script>
