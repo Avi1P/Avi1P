@@ -21,6 +21,14 @@
 			left:10;
 			top:10;
 		}
+		#ground { 
+			border: 0px solid #666; 
+			background-color: green;
+			border-radius: 20px;
+			position: absolute;
+			left:10;
+			top:10;
+		}
 		/* Defines Tooth image */
 		#tooth {
 	  		width: 205px;
@@ -28,7 +36,7 @@
 	  		background: url(tooth.jpeg);
 	  		position: fixed;
 	  		left: 50%;
-	  		bottom:20%;
+	  		bottom: 20%;
 		}
 
 		/* Creates the Qontra font */
@@ -42,6 +50,7 @@
 	
 	<!-- Creates Canvas and Tooth elements -->
 	<canvas id="canvas"></canvas>
+	<ground id="ground"></ground>
 	<img id="tooth" src="tooth.jpeg" width="1" height="1">
 	
 	<!-- Opens JavaScript for page styleing -->
@@ -50,10 +59,16 @@
 	   	var canvas = document.getElementById('canvas');
 	   	var context = canvas.getContext('2d');
 	   	context.canvas.width= window.innerWidth - 20;
-		context.canvas.height= 1200;
+		context.canvas.height= 500;
 
 		context.textAlign='left';
 		context.textBaseline='top';
+
+		var ground = document.getElementById('ground');
+		var scene = ground.getContext('2d');
+		scene.ground.width = 20000;
+		scene.ground.width.height = 200;
+
 
 		//Draws logo
 		logo = new Image();
@@ -106,32 +121,4 @@
 
 	   	}, false);
 	</script>
-	<div class="speech-bubble">
-    	<style>
-			.speech-bubble {
-				position: fixed;
-				background: green;
-				border-radius: .4em;
-				width: 200;
-				height:100;
-				right:150;
-				top:90;
-					
-			}
-
-			.speech-bubble:after {
-				content: '';
-				position: absolute;
-				right: 0;
-				top: 50%;
-				width: 0;
-				height: 0;
-				border: 50px solid transparent;
-				border-left-color: green;
-				border-right: 0;
-				border-bottom: 0;
-				margin-top: -25px;
-				margin-right: -50px;
-    	</style>
-	</div>
 </html>	
