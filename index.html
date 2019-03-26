@@ -54,7 +54,7 @@
 
 		canvas.addEventListener('mousemove', function(event) {
 			//Home Button
-			line(scrollTop);
+			line(event.y);
 			context.stroke();
 	   	}, false);
 
