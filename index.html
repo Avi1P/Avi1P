@@ -41,10 +41,12 @@
 		context.strokeStyle = "white";
 		context.lineWidth = 3;
 
-		context.moveTo(300, 0);
-		context.lineTo(0, 600);
-		context.moveTo(width-320, 0);
-		context.lineTo(width-20, 600);
+		function sidelines() {
+			context.moveTo(300, 0);
+			context.lineTo(0, 600);
+			context.moveTo(width-320, 0);
+			context.lineTo(width-20, 600);
+		}
 
 		function line(lineY) {
 			var lineX = 300 - 0.5*lineY;
@@ -53,8 +55,13 @@
 		}
 
 		canvas.addEventListener('wheel',function(event){
+			canvas.clearRect(0,0,width,height);
+			sidelines();
     		scroll++;
-    		line(scroll);
+    		line(scroll+20);
+    		line(scroll+200)
+    		line(scroll+400);
+    		line(scroll+620);
 			context.stroke();
 		}, false);
 
