@@ -34,7 +34,7 @@
 	   	var width = window.innerWidth;
 	   	var height = window.innerHeight;
 	   	context.canvas.width= window.innerWidth - 20;
-		context.canvas.height= window.innerHeight +20;
+		context.canvas.height= window.innerHeight + 20;
 		var scroll = 0;
 
 		context.beginPath();
@@ -53,11 +53,9 @@
 		}
 
 		canvas.addEventListener('wheel',function(event){
-    		mouseController.wheel(event);
     		scroll++;
     		line(scroll);
 			context.stroke();
-    		return false; 
 		}, false);
 
 		context.stroke();
