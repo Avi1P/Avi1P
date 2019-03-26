@@ -35,7 +35,8 @@
 	   	var height = window.innerHeight;
 	   	context.canvas.width= window.innerWidth - 20;
 		context.canvas.height= window.innerHeight -20;
-window.pageYOffset;
+		var scroll = 0;
+
 		context.beginPath();
 		context.strokeStyle = "white";
 		context.lineWidth = 3;
@@ -51,11 +52,13 @@ window.pageYOffset;
 			context.lineTo(width-lineX-20, lineY);
 		}
 
-		canvas.addEventListener('mousemove', function(event) {
-			//Home Button
-			line(window.pageYOffset);
+		canvas.addEventListener('wheel',function(event){
+    		mouseController.wheel(event);
+    		scroll++;
+    		line(scroll);
 			context.stroke();
-	   	}, false);
+    		return false; 
+		}, false);
 
 		context.stroke();
 
