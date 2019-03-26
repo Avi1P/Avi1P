@@ -21,10 +21,19 @@
 			left:10;
 			top:10;
 		}
+		/* Defines Tooth image */
+		#tooth {
+	  		width: 205px;
+	  		height: 245px;
+	  		background: url(tooth.jpeg);
+	  		position: fixed;
+	  		right:50%;
+		}
 	</style>
 	
 	<!-- Creates Canvas and Tooth elements -->
 	<canvas id="canvas"></canvas>
+	<img id="tooth" src="tooth.jpeg" width="1" height="1">
 	
 	<!-- Opens JavaScript for page styleing -->
 	<script>
@@ -38,23 +47,15 @@
 		context.beginPath();
 		context.strokeStyle = "white";
 		context.lineWidth = 3;
-
-		context.moveTo(300, 0);
-		context.lineTo(0, 600);
-		context.moveTo(width-300, 0);
-		context.lineTo(wdith-20, 0);
-
-		function line(lineY) {
-			var lineX = 300 - 0.5*lineY;
-			context.moveTo(lineX, lineY);
-			context.lineTo(width-lineX, lineY);
-		}
-
-		line(20);
-		line(200);
-		line(400);
-		line(620);
+		context.moveTo(200,200);
+		context.lineTo(width-200, 200);
+		context.moveTo(100,400);
+		context.lineTo(width-100, 400);
+		context.moveTo(0,600);
+		context.lineTo(width, 600);
+		context.lineTo(width-300, 0);
+		context.moveTo(0,600);
+		context.lineTo(300, 0);
 		context.stroke();
-
 	</script>
-</html>	
+</html>
