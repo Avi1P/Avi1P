@@ -41,14 +41,28 @@
 
 		context.moveTo(300, 0);
 		context.lineTo(0, 600);
-		context.moveTo(width-300, 0);
+		context.moveTo(width-320, 0);
 		context.lineTo(width-20, 600);
 
 		function line(lineY) {
 			var lineX = 300 - 0.5*lineY;
 			context.moveTo(lineX, lineY);
-			context.lineTo(width-lineX, lineY);
+			context.lineTo(width-lineX-20, lineY);
 		}
+
+		canvas.addEventListener('mousemove', function(event) {
+			//Home Button
+			dropDown(menuHome, event.x, event.y);
+	 	  	// About Button
+	    	dropDown(menuAbout, event.x, event.y);
+	    	//Services Button
+			dropDown(menuServices, event.x, event.y);
+	 	  	//Testimonials Button
+	    	dropDown(menuTestimonials, event.x, event.y);
+	    	//Contact Us Button
+	    	dropDown(menuContact_Us, event.x, event.y);
+
+	   	}, false);
 
 		line(20);
 		line(200);
