@@ -35,6 +35,8 @@
 	   	var height = window.innerHeight;
 	   	context.canvas.width= window.innerWidth - 20;
 		context.canvas.height= window.innerHeight -20;
+
+		var scrollTop = window.pageYOffset;
 		context.beginPath();
 		context.strokeStyle = "white";
 		context.lineWidth = 3;
@@ -48,15 +50,15 @@
 			var lineX = 300 - 0.5*lineY;
 			context.moveTo(lineX, lineY);
 			context.lineTo(width-lineX-20, lineY);
+			context.stroke();
 		}
 
-		
+		canvas.addEventListener('scroll', function(event) {
+			line(scrollTop);
+			context.stroke();
+	   	}, false);
 
-		line(20);
-		line(200);
-		line(400);
-		line(620);
-		context.stroke();
+		
 
 	</script>
 </html>	
