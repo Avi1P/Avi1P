@@ -55,8 +55,13 @@
 		}
 
 		canvas.addEventListener('wheel',function(event){
-    			scroll+=2;
-    			line(scroll);
+			canvas.clearRect(0,0,width,height);
+			sidelines();
+    		scroll+=2;
+    		line(scroll+20);
+    		line(scroll+200);
+    		line(scroll+400);
+    		line(scroll+620);
 			context.stroke();
 		}, false);
 
