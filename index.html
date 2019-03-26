@@ -47,21 +47,13 @@
 		context.beginPath();
 		context.strokeStyle = "white";
 		context.lineWidth = 3;
+		
 		context.moveTo(300, 0);
 		context.lineTo(0, 600);
 		context.moveTo(width-300, 0);
 		context.lineTo(wdith-20, 0);
 
-		function line(lineY) {
-			var lineX = 300 - 0.5*lineY;
-			context.moveTo(lineX, lineY);
-			context.lineTo(width-lineX, lineY);
-		}
-
-		line(20);
-		line(200);
-		line(400);
-		line(620);
+		
 		context.stroke();
 	</script>
 </html>
