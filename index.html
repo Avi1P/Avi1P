@@ -43,10 +43,13 @@
 	   	var width = window.innerWidth;
 	   	var height = window.innerHeight;
 	   	context.canvas.width= window.innerWidth - 20;
-		context.canvas.height= window.innerHeight;
+		context.canvas.height= window.innerHeight -20;
 		context.beginPath();
+		context.strokeStyle = "white";
+		context.lineWidth = 3;
 		context.moveTo(0,1000);
 		context.lineTo(width, 1000);
+		context.stroke();
 
 	</script>
 </html>	
