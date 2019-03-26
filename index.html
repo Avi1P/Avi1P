@@ -55,16 +55,9 @@
 		}
 
 		canvas.addEventListener('wheel',function(event){
-			canvas.clearRect(0,0,width,height);
-			sidelines();
-    		scroll++;
-    		line(scroll+20);
-    		line(scroll+200)
-    		line(scroll+400);
-    		line(scroll+620);
-			context.stroke();
+			
 		}, false);
-
+		sidelines();
 		context.stroke();
 
 	</script>
