@@ -52,8 +52,11 @@
 			context.lineTo(width-lineX-20, lineY);
 		}
 
-		canvas.addEventListener('scroll', function(event) {
-			line(strokeTop);
+		canvas.addEventListener('scroll', function() {
+			context.beginPath();
+			context.strokeStyle = "white";
+			context.lineWidth = 3;
+			line(20);
 			context.stroke();
 	   	});
 
