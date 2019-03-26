@@ -55,11 +55,9 @@
 		}
 
 		canvas.addEventListener('wheel',function(event){
-			canvas.addEventListener('wheel',function(event){
-    		scroll++;
-    		line(scroll);
+    			scroll+=2;
+    			line(scroll);
 			context.stroke();
-		}, false);
 		}, false);
 
 		sidelines();
