@@ -53,8 +53,11 @@
 		}
 
 		canvas.addEventListener('scroll', function(event) {
-			line(20);
+			line(strokeTop);
 			context.stroke();
-	   	}, false);
+	   	});
+
+		context.stroke();
+
 	</script>
 </html>	
