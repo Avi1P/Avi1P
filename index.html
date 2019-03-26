@@ -50,15 +50,14 @@
 			var lineX = 300 - 0.5*lineY;
 			context.moveTo(lineX, lineY);
 			context.lineTo(width-lineX-20, lineY);
-			context.stroke();
 		}
 
 		canvas.addEventListener('scroll', function(event) {
-			line(scrollTop);
+			line(strokeTop);
 			context.stroke();
 	   	}, false);
 
-		
+		context.stroke();
 
 	</script>
 </html>	
