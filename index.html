@@ -34,7 +34,7 @@
 	   	var width = window.innerWidth;
 	   	var height = window.innerHeight;
 	   	context.canvas.width= window.innerWidth - 20;
-		context.canvas.height= window.innerHeight +200;
+		context.canvas.height= window.innerHeight -20;
 
 		var scrollTop = window.pageYOffset;
 		context.beginPath();
@@ -52,11 +52,11 @@
 			context.lineTo(width-lineX-20, lineY);
 		}
 
-		canvas.addEventListener('scroll', function() {
+		canvas.addEventListener('wheel', function() {
 			context.beginPath();
 			context.strokeStyle = "white";
 			context.lineWidth = 3;
-			line(20);
+			line(strokeTop);
 			context.stroke();
 	   	});
 
