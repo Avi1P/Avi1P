@@ -17,10 +17,18 @@
 			left:10;
 			top:10;
 		}
+		#softwareDev {
+	  		width: 205px;
+	  		height: 245px;
+	  		background: url(softwareDev.png);
+	  		position: fixed;
+	  		right:50%;
+		}
 	</style>
 	
 	<!-- Creates Canvas and Tooth elements -->
 	<canvas id="canvas"></canvas>
+	<img id="softwareDev" src="softwareDev" width="1" height="1">
 	
 	<!-- Opens JavaScript for page styleing -->
 	<script>
@@ -57,6 +65,7 @@
 			context.moveTo(lineX, lineY);
 			context.lineTo(width-lineX-20, lineY);
 		}
+
 		function hash(lineY) {
 			var lineX = 300 - 0.5*lineY;
 			context.moveTo(lineX, lineY);
@@ -68,7 +77,6 @@
 			context.lineTo(width - lineX - 40, lineY);
 			context.moveTo(width - lineX - 0.25*lineY - 220, lineY);
 			context.lineTo(width - lineX - 0.25*lineY - 240, lineY);
-
 		}
 
 		function field(y) {
