@@ -60,16 +60,18 @@
 			context.strokeStyle = "green";
 			sidelines();
 			line(scroll+20);
-    		line(scroll+200);
-    		line(scroll+400);
-    		line(scroll+620);
-    		context.stroke();
-    		context.strokeStyle = "white";
-    		scroll+=2;
-    		line(scroll+20);
-    		line(scroll+200);
-    		line(scroll+400);
-    		line(scroll+620);
+			line(scroll+200);
+			line(scroll+400);
+			line(scroll+620);
+			context.stroke();
+			context.beginPath();
+			context.strokeStyle = "white";
+			context.lineWidth = 3;
+			scroll+=2;
+			line(scroll+20);
+			line(scroll+200);
+			line(scroll+400);
+			line(scroll+620);
 			context.stroke();
 		}, false);
 
