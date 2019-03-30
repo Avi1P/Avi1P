@@ -40,6 +40,8 @@
 		context.beginPath();
 		context.strokeStyle = "white";
 		context.lineWidth = 3;
+		sidelines();
+		context.stroke();
 
 		function sidelines() {
 			context.moveTo(300, 0);
@@ -55,6 +57,14 @@
 		}
 
 		canvas.addEventListener('wheel',function(event){
+			context.strokeStyle = "green";
+			sidelines();
+			line(scroll+20);
+    		line(scroll+200);
+    		line(scroll+400);
+    		line(scroll+620);
+    		context.stroke();
+    		context.strokeStyle = "white";
     		scroll+=2;
     		line(scroll+20);
     		line(scroll+200);
@@ -63,8 +73,7 @@
 			context.stroke();
 		}, false);
 
-		sidelines();
-		context.stroke();
+		
 
 	</script>
 </html>	
