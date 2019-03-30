@@ -1,7 +1,7 @@
 <html>
 	<style>
 		html {
-   			overflow: scroll;
+			overflow: scroll;
 			overflow-x: hidden;
 			scroll-behavior: smooth;
 		}
@@ -9,7 +9,7 @@
 			width: 0px; 
 			background: transparent;
 		}
-       	#canvas { 
+		#canvas { 
 			border: 0px solid #666; 
 			background-color: green;
 			border-radius: 20px;
@@ -24,18 +24,19 @@
 	
 	<!-- Opens JavaScript for page styleing -->
 	<script>
-	   	//Creates the canvas bar
-	   	var canvas = document.getElementById('canvas');
-	   	var context = canvas.getContext('2d');
-	   	var width = window.innerWidth;
-	   	var height = window.innerHeight;
-	   	var scroll = 0;
+		//Creates the canvas bar
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+		var width = window.innerWidth;
+		var height = window.innerHeight;
+		var scroll = 0;
 
-	   	context.canvas.width= window.innerWidth - 20;
+		context.canvas.width= window.innerWidth - 20;
 		context.canvas.height= window.innerHeight - 20;
 		
 		setStyle();
 		sidelines();
+		field(scroll);
 		context.stroke();
 
 		function setStyle() {
@@ -57,21 +58,22 @@
 			context.lineTo(width-lineX-20, lineY);
 		}
 
-		canvas.addEventListener('wheel',function(event){
-			context.strokeStyle = "green";
-			sidelines();
+		function field(scroll) {
 			line(scroll+20);
 			line(scroll+200);
 			line(scroll+400);
 			line(scroll+620);
+		}
+
+		canvas.addEventListener('wheel',function(event){
+			context.strokeStyle = "green";
+			sidelines();
+			field(scroll);
 			context.stroke();
 			setStyle();
 			sidelines();
 			scroll+=3;
-			line(scroll+20);
-			line(scroll+200);
-			line(scroll+400);
-			line(scroll+620);
+			field(scroll);
 			context.stroke();
 		}, false);
 
