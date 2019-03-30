@@ -1,8 +1,5 @@
 <html>
-	
-	<!-- Opens CSS for page styleing -->
 	<style>
-		/*Defines and Disables Scrollbar*/
 		html {
    			overflow: scroll;
 			overflow-x: hidden;
@@ -12,7 +9,6 @@
 			width: 0px; 
 			background: transparent;
 		}
-		/* Defines Canvas to later be drawn on*/
        	#canvas { 
 			border: 0px solid #666; 
 			background-color: green;
@@ -33,15 +29,20 @@
 	   	var context = canvas.getContext('2d');
 	   	var width = window.innerWidth;
 	   	var height = window.innerHeight;
+	   	var scroll = 0;
+
 	   	context.canvas.width= window.innerWidth - 20;
 		context.canvas.height= window.innerHeight - 20;
-		var scroll = 0;
-
-		context.beginPath();
-		context.strokeStyle = "white";
-		context.lineWidth = 3;
+		
+		setStyle();
 		sidelines();
 		context.stroke();
+
+		function setStyle() {
+			context.beginPath();
+			context.strokeStyle = "white";
+			context.lineWidth = 3;
+		}
 
 		function sidelines() {
 			context.moveTo(300, 0);
@@ -64,9 +65,7 @@
 			line(scroll+400);
 			line(scroll+620);
 			context.stroke();
-			context.beginPath();
-			context.strokeStyle = "white";
-			context.lineWidth = 3;
+			setStyle();
 			sidelines();
 			scroll+=3;
 			line(scroll+20);
