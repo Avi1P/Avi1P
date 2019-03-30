@@ -60,13 +60,14 @@
 
 		function field(y) {
 			var newY= 0;
-			newY = 2*Math.sqrt(newY-y)+20;
+			newY = 2*Math.sqrt(y)+20;
 			line(newY);
-			newY+=2*Math.sqrt(newY-y)+200;
+			newY+=2*Math.sqrt(y)+200;
 			line(newY);
-			newY+=2*Math.sqrt(newY-y)+200;
+			newY+=2*Math.sqrt(y)+200;
 			line(newY);
-			newY+=2*Math.sqrt(newY-y)+200;
+			newY+=2*Math.sqrt(y)+200;
+			line(newY);
 		}
 
 		canvas.addEventListener('wheel',function(event){
