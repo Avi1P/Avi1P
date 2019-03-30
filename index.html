@@ -58,11 +58,11 @@
 			context.lineTo(width-lineX-20, lineY);
 		}
 
-		function field(scroll) {
-			line(scroll+20);
-			line(scroll+180);
-			line(scroll+380);
-			line(scroll+620);
+		function field(y) {
+			line(y+20);
+			line(y+220);
+			line(y+420);
+			line(y+620);
 		}
 
 		canvas.addEventListener('wheel',function(event){
