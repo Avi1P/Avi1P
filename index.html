@@ -59,15 +59,10 @@
 		}
 
 		function field(y) {
-			var newY= 0;
-			newY = 2*Math.sqrt(y)+20;
-			line(newY);
-			newY+=2*Math.sqrt(y)+200;
-			line(newY);
-			newY+=2*Math.sqrt(y)+200;
-			line(newY);
-			newY+=2*Math.sqrt(y)+200;
-			line(newY);
+			line(0.001* (y+20) * (y + 20));
+			line(0.001* (y+220) * (y + 220));
+			line(0.001* (y+420) * (y + 420));
+			line(0.001* (y+620) * (y + 620));
 		}
 
 		canvas.addEventListener('wheel',function(event){
