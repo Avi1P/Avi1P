@@ -59,10 +59,6 @@
 		}
 
 		function field(y) {
-			if (y > 200) {
-				y-=200;
-				slope-=200;
-			}
 			line(0.001* (y+20) * (y + 20));
 			line(0.001* (y+220) * (y + 220));
 			line(0.001* (y+420) * (y + 420));
@@ -78,6 +74,9 @@
 			setStyle();
 			sidelines();
 			scroll+=3;
+			if (scroll > 200) {
+				scroll =  scroll - 200;
+			}
 			field(scroll);
 			context.stroke();
 		}, false);
