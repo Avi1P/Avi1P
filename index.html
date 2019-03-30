@@ -57,13 +57,24 @@
 			context.moveTo(lineX, lineY);
 			context.lineTo(width-lineX-20, lineY);
 		}
+		function hash(lineY) {
+			var lineX = 300 - 0.5*lineY;
+			context.moveTo(lineX, lineY);
+			context.lineTo(lineX+20, lineY);
+			context.moveTo(width-lineX-20, lineY);
+			context.moveTo(width-lineX-40, lineY);
+
+		}
 
 		function field(y) {
-			line(0.001* (y+20) * (y + 20));
-			line(0.001* (y+220) * (y + 220));
-			line(0.001* (y+420) * (y + 420));
-			line(0.001* (y+620) * (y + 620));
-			line(0.001* (y+820) * (y + 820));
+			for (var i = 0; i < 5; i++) {
+				line(0.001* (y+20) * (y + 20));
+				hash(60);
+				hash(100);
+				hash(140);
+				hash(180);
+				y+=200;
+			}
 		}
 
 		canvas.addEventListener('wheel',function(event){
