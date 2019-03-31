@@ -44,10 +44,6 @@
 		context.canvas.height= window.innerHeight - 20;
 		
 		var softwareDev = document.getElementById('softwareDev');
-		softwareDev.addEventListener('wheel', function(event) {
-			var currentTop = parseInt(softwareDev.style.top, 10);
-			softwareDev.style.top = (currentTop + 20) + "px";
-		}, false);
 
 		setStyle();
 		sidelines();
@@ -110,6 +106,8 @@
 		}
 
 		canvas.addEventListener('wheel',function(event){
+			var currentTop = parseInt(softwareDev.style.top, 10);
+			softwareDev.style.top = (currentTop + 20) + "px";
 			context.strokeStyle = "green";
 			context.lineWidth = 4;
 			sidelines();
