@@ -22,6 +22,7 @@
 	  		height: 50px;
 	  		position: fixed;
 	  		right:50%;
+	  		top:0;
 		}
 	</style>
 	
@@ -44,7 +45,7 @@
 		
 		var softwareDev = document.getElementById('softwareDev');
 		softwareDev.addEventListener('wheel', function(event) {
-			softwareDev.top+=1;
+			softwareDev.style.top+=1;
 		}, false);
 
 		setStyle();
