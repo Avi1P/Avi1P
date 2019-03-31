@@ -20,7 +20,7 @@
 		#softwareDev {
 	  		width: 400px;
 	  		height: 50px;
-	  		position: fixed;
+	  		position: absolute;
 	  		right:50%;
 	  		top:10;
 		}
@@ -106,8 +106,7 @@
 		}
 
 		canvas.addEventListener('wheel',function(event){
-			var currentTop = parseInt(softwareDev.style.top, 10);
-			softwareDev.style.top = (currentTop + 20) + "px";
+			softwareDev.style.top = (scroll) + "px";
 			context.strokeStyle = "green";
 			context.lineWidth = 4;
 			sidelines();
