@@ -20,6 +20,7 @@
 		#softwareDev {
 	  		width: 400px;
 	  		height: 50px;
+	  		background: url(softwareDev.png);
 	  		position: fixed;
 	  		right:50%;
 		}
@@ -33,6 +34,7 @@
 	<script>
 		//Creates the canvas bar
 		var canvas = document.getElementById('canvas');
+
 		var context = canvas.getContext('2d');
 		var width = window.innerWidth;
 		var height = window.innerHeight;
@@ -41,6 +43,11 @@
 		context.canvas.width= window.innerWidth - 20;
 		context.canvas.height= window.innerHeight - 20;
 		
+		var softwareDev = document.getElementById('softwareDev');
+		softwareDev.addEventListener(wheel, function(event) {
+			softwareDev.top++1;
+		}, false);
+
 		setStyle();
 		sidelines();
 		field(scroll);
