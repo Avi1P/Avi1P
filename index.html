@@ -17,61 +17,62 @@
 			left:10;
 			top:10;
 		}
+		#softwareDev {
+	  		width: 400px;
+	  		height: 50px;
+	  		position: absolute;
+	  		right:50%;
+	  		top:10;
+		}
 	</style>
 	
 	<!-- Creates Canvas and Tooth elements -->
 	<canvas id="canvas"></canvas>
+	<img id="softwareDev" src="softwareDev.png" width="1" height="1">
 	
 	<!-- Opens JavaScript for page styleing -->
 	<script>
 		//Creates the canvas bar
 		var canvas = document.getElementById('canvas');
-
 		var context = canvas.getContext('2d');
 		var width = window.innerWidth;
 		var height = window.innerHeight;
 		var scroll = 0;
-
 		context.canvas.width= window.innerWidth - 20;
 		context.canvas.height= window.innerHeight - 20;
-
+		
+		var softwareDev = document.getElementById('softwareDev');
 		setStyle();
 		sidelines();
 		field(scroll);
 		context.stroke();
-
 		function setStyle() {
 			context.beginPath();
 			context.strokeStyle = "white";
 			context.lineWidth = 3;
 		}
-
 		function sidelines() {
 			context.moveTo(300, 0);
 			context.lineTo(0, 600);
 			context.moveTo(width-320, 0);
 			context.lineTo(width-20, 600);
 		}
-
 		function line(lineY) {
 			var lineX = 300 - 0.5*lineY;
 			context.moveTo(lineX, lineY);
 			context.lineTo(width-lineX-20, lineY);
 		}
-
 		function hash(lineY) {
 			var lineX = 300 - 0.5*lineY;
 			context.moveTo(lineX, lineY);
 			context.lineTo(lineX + 20, lineY);
 			context.moveTo(lineX + 0.25*lineY + 200, lineY);
 			context.lineTo(lineX + 0.25*lineY + 220, lineY);
-
 			context.moveTo(width - lineX - 20, lineY);
 			context.lineTo(width - lineX - 40, lineY);
 			context.moveTo(width - lineX - 0.25*lineY - 220, lineY);
 			context.lineTo(width - lineX - 0.25*lineY - 240, lineY);
 		}
-
 		function field(y) {
 			for (var i = 0; i < 5; i++) {
 				if (y - 20 > 0) {
@@ -94,7 +95,6 @@
 				y+=200;
 			}
 		}
-
 		canvas.addEventListener('wheel',function(event){
 			softwareDev.style.top = (scroll) + "px";
 			context.strokeStyle = "green";
