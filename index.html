@@ -17,18 +17,10 @@
 			left:10;
 			top:10;
 		}
-		#softwareDev {
-	  		width: 400px;
-	  		height: 50px;
-	  		position: absolute;
-	  		right:50%;
-	  		top:10;
-		}
 	</style>
 	
 	<!-- Creates Canvas and Tooth elements -->
 	<canvas id="canvas"></canvas>
-	<img id="softwareDev" src="softwareDev.png" width="1" height="1">
 	
 	<!-- Opens JavaScript for page styleing -->
 	<script>
@@ -41,7 +33,6 @@
 		context.canvas.width= window.innerWidth - 20;
 		context.canvas.height= window.innerHeight - 20;
 		
-		var softwareDev = document.getElementById('softwareDev');
 		setStyle();
 		sidelines();
 		field(scroll);
@@ -96,7 +87,6 @@
 			}
 		}
 		canvas.addEventListener('wheel',function(event){
-			softwareDev.style.top = (scroll) + "px";
 			context.strokeStyle = "green";
 			context.lineWidth = 4;
 			sidelines();
